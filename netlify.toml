@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"  # Command to build your React and Vite project
+  publish = "dist"           # Directory to deploy (output directory of Vite build)
+
+[[redirects]]
+  from = "/*"                # Redirect all paths
+  to = "/index.html"         # Redirect to index.html for client-side routing
+  status = 200               # Set status code to 200 for client-side routing
+
+[[headers]]
+  for = "/*"                 # Apply headers to all paths
+    [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"  # Set caching headers
